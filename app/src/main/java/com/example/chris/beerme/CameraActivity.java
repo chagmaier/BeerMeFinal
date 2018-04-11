@@ -59,7 +59,7 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_activity);
-
+        // here's a comment
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
         textView = (TextView) findViewById(R.id.result_view);
 
