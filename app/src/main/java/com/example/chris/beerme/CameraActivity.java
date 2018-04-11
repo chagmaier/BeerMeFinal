@@ -24,6 +24,7 @@ import java.io.IOException;
  * Created by Matt on 4/10/2018.
  */
 
+// I made this camera activity class to scan in words with the camera
 public class CameraActivity extends AppCompatActivity {
 
     SurfaceView cameraView;
@@ -69,7 +70,7 @@ public class CameraActivity extends AppCompatActivity {
         } else {
 
             cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
-                    .setFacing(CameraSource.CAMERA_FACING_FRONT)
+                    .setFacing(CameraSource.CAMERA_FACING_BACK)
                     .setRequestedPreviewSize(1280, 1040)
                     .setRequestedFps(2.0f)
                     .setAutoFocusEnabled(true)
