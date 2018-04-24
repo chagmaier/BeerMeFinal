@@ -62,7 +62,7 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.camera_activity);
         // here's a comment
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
-        textView = (TextView) findViewById(R.id.result_view);
+        textView = (TextView) findViewById(R.id.scanner_text);
 
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if (!textRecognizer.isOperational()) {

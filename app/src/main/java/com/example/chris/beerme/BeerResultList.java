@@ -17,11 +17,16 @@ public class BeerResultList extends AppCompatActivity {
     private BottomNavigationView mMainNav;
     private Context mContext;
     private ListView mListView;
+    BeerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.beer_result_view);
+
+        mContext = this;
+
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
