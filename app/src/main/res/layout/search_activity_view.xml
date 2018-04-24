@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Search Beer Names Here!" />
+
+    <Spinner
+        android:id="@+id/abv_dropdown"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="16dp"
+        />
+
+    <Spinner
+        android:id="@+id/beer_type_dropdown"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/abv_dropdown"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/abv_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+        android:text="ABV %"
+        android:textSize="16dp"
+        />
+
+    <TextView
+        android:id="@+id/beer_type_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/search_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/abv_dropdown"
+        android:textStyle="bold"
+        android:text="Beer Type"
+        android:textSize="16dp" />
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/main_nav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        app:itemTextColor="#FFFFFF"
+        android:layout_alignParentStart="true"
+        app:itemBackground="@color/lightGray"
+        app:menu="@menu/nav_items"
+        >
+    </android.support.design.widget.BottomNavigationView>
+
+</RelativeLayout>

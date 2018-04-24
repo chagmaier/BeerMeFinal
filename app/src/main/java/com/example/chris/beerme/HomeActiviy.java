@@ -33,6 +33,30 @@ public class HomeActiviy extends AppCompatActivity {
         mMainFrame = findViewById(R.id.main_frame);
         mMainNav = findViewById(R.id.main_nav);
 
+        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()) {
+
+                    case R.id.nav_home:
+                        Intent intent1 = new Intent(HomeActiviy.this, MainActivity.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.nav_nearme:
+                        Intent intent2 = new Intent(HomeActiviy.this, HomeActiviy.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.nav_search:
+                        Intent intent3 = new Intent(HomeActiviy.this, SearchActivity.class);
+                        startActivity(intent3);
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
         /*
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

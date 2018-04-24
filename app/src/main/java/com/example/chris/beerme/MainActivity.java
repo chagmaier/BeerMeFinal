@@ -44,7 +44,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.home_button:
                 Intent intent1 = new Intent(mContext, HomeActiviy.class);
 
-        //blahblahblah
+                //blahblahblah
 
                 startActivityForResult(intent1,1);
                 break;

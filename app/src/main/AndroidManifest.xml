@@ -24,6 +24,12 @@
         <activity android:name=".CameraActivity">
 
         </activity>
+        <activity android:name=".SearchActivity">
+
+        </activity>
+        <activity android:name=".BeerResultList">
+
+        </activity>
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr"/>
     </application>

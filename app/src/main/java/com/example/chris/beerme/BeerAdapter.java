@@ -1,10 +1,13 @@
 package com.example.chris.beerme;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,12 +19,14 @@ import java.util.ArrayList;
  * Created by Matt on 4/10/2018.
  */
 
-public class BeerAdapter extends BaseAdapter {
+public class BeerAdapter extends BaseAdapter implements Filterable{
 
     // adapter takes the app itself and a list of data to display
     private Context mContext;
     private ArrayList<Beer> mBeerList;
     private LayoutInflater mInflater;
+    private ArrayList<Beer> filteredData;
+    private ArrayList<Beer> originalData;
 
     // constructor
     public BeerAdapter(Context mContext, ArrayList<Beer> mBeerList){
@@ -29,6 +34,8 @@ public class BeerAdapter extends BaseAdapter {
         // initialize instances variables
         this.mContext = mContext;
         this.mBeerList = mBeerList;
+        this.filteredData = mBeerList;
+        this.originalData = mBeerList;
         mInflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -106,6 +113,51 @@ public class BeerAdapter extends BaseAdapter {
         Picasso.with(mContext).load("http://www.iemoji.com/view/emoji/429/food-drink/clinking-beer-mugs").into(thumbnailImageView);
 
         return convertView;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected Filter.FilterResults performFiltering(CharSequence charSequence) {
+                FilterResults results = new FilterResults();
+                //If there's nothing to filter on, return the original data for your list
+                if(charSequence == null || charSequence.length() == 0)
+                {
+                    results.values = originalData;
+                    results.count = originalData.size();
+                }
+                else
+                {
+                    ArrayList<Beer> filterResultsData = new ArrayList<Beer>();
+
+                    for(Beer beer : originalData)
+                    {
+                        //In this loop, you'll filter through originalData and compare each item to charSequence.
+                        //If you find a match, add it to your new ArrayList
+                        //I'm not sure how you're going to do comparison, so you'll need to fill out this conditional
+                        if(beer.name.toLowerCase().contains(charSequence.toString().toLowerCase()))
+                        {
+                            //System.out.println("Title: " + data.title + "Contains " + charSequence);
+                            filterResultsData.add(beer);
+                        }
+                    }
+
+                    results.values = filterResultsData;
+                    results.count = filterResultsData.size();
+                }
+
+                return results;
+            }
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                //System.out.print("Publish" + filterResults.values);
+                mBeerList = (ArrayList<Beer>)filterResults.values;
+                notifyDataSetChanged();
+            }
+
+        };
+
     }
 
     private static class ViewHolder {
