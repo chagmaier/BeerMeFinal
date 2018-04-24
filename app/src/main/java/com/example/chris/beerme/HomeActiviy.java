@@ -43,7 +43,7 @@ public class HomeActiviy extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.nav_nearme:
-                        Intent intent2 = new Intent(HomeActiviy.this, HomeActiviy.class);
+                        Intent intent2 = new Intent(HomeActiviy.this, SearchActivity.class);
                         startActivity(intent2);
                         break;
                     case R.id.nav_search:

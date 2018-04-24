@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private Context mContext;
+    private SearchActivity mContext;
     private Spinner abvSpinner;
     private Spinner beerTypeSpinner;
     private BottomNavigationView mMainNav;

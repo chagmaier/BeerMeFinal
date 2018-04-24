@@ -35,7 +35,7 @@ public class Beer {
     // static method that loads our beers.json using the helper method
     // this method will return an array list of beers constructed from the JSON
     // file
-    public static ArrayList<Beer> getbeersFromFile(String filename, Context context) {
+    public static ArrayList<Beer> getbeersFromFile(String filename, SearchActivity context) {
         ArrayList<Beer> beerList = new ArrayList<Beer>();
 
 
