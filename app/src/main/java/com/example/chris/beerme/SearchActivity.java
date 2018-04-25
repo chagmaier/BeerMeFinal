@@ -14,14 +14,13 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 /**
  * Created by Chris on 4/22/18.
  */
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCombatActivity {
 
     private SearchActivity mContext;
     private Spinner abvSpinner;
