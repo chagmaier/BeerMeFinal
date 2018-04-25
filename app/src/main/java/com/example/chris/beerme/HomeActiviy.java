@@ -21,9 +21,7 @@ public class HomeActiviy extends AppCompatActivity {
     private BottomNavigationView mMainNav;
     private Context mContext;
     private FrameLayout mMainFrame;
-    private HomeFragment homeFragment;
-    private NearMeFragment nearMeFragment;
-    private SearchFragment searchFragment;
+
 
 
     @Override
