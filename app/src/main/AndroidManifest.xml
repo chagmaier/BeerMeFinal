@@ -32,6 +32,9 @@
         <activity android:name=".BeerResultList">
 
         </activity>
+        <activity android:name=".BeerDetailActivity">
+
+        </activity>
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr"/>
     </application>

@@ -17,7 +17,7 @@ public class Beer {
 
     public String name;
     public String abv;
-    public String instructionUrl;
+    public double abvInt;
     public String category;
     public String description;
     public String imageUrl;
@@ -55,12 +55,14 @@ public class Beer {
                 Beer beer = new Beer();
                 beer.name = beers.getJSONObject(i).getString("name");
                 beer.abv = beers.getJSONObject(i).getString("abv");
-                beer.imageUrl = "https://freeiconshop.com/wp-content/uploads/edd/beer-outline-filled.png";
+//                beer.imageUrl = "https://freeiconshop.com/wp-content/uploads/edd/beer-outline-filled.png".toString();
                 beer.description = beers.getJSONObject(i).getString("descript");
                 beer.style = beers.getJSONObject(i).getString("style_name");
                 beer.category = beers.getJSONObject(i).getString("cat_name");
                 beer.searchLabel = new ArrayList<>();
                 beer.rowNumber = i;
+
+                beer.abvInt = Double.parseDouble(beer.abv);
 
                 //convert serving number from string to int
                 double servingInt = Double.parseDouble(beer.abv);

@@ -10,6 +10,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,10 +25,8 @@ import java.util.ArrayList;
 public class BeerResultList extends AppCompatActivity {
     private Context mContext;
     private ListView mListView;
-
     EditText searchBar;
     BeerAdapter adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -45,24 +45,47 @@ public class BeerResultList extends AppCompatActivity {
         mListView = findViewById(R.id.beer_list_view);
         mListView.setAdapter(adapter);
 
+        mListView.setOnItemClickListener( new AdapterView.OnItemClickListener(){
 
-        searchBar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id){
+                Beer selectedBeer = beerList.get(position);
+
+                // create my intent package
+                // add all the information needed for detail page
+                // startActivity with that intent
+
+                //explicit
+                // from, to
+                Intent detailIntent = new Intent(mContext, BeerDetailActivity.class);
+                 //put title and instruction URL
+                detailIntent.putExtra("name", selectedBeer.name);
+               // detailIntent.putExtra("beerImage", selectedBeer.imageUrl);
+                detailIntent.putExtra("description",selectedBeer.description);
+                detailIntent.putExtra("style",selectedBeer.style);
+                detailIntent.putExtra("category",selectedBeer.category);
+
+                launchActivity(detailIntent);
+
+            }
+        });
+
+        /*searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 BeerResultList.this.adapter.getFilter().filter(charSequence.toString());
 
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -85,6 +108,9 @@ public class BeerResultList extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void launchActivity(Intent intent){
+        startActivityForResult(intent,1);
     }
 }
 

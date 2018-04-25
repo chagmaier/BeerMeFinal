@@ -9,7 +9,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -84,7 +83,7 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
         }
 
         // get corresonpinding recipe for each row
-        final Beer beer = (Beer) getItem(position);
+        Beer beer = (Beer) getItem(position);
 
         // get relavate subview of the row view
         TextView nameTextView = holder.nameTextView;
@@ -98,7 +97,13 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
         nameTextView.setText(beer.name);
         nameTextView.setTextSize(18);
 
-        abvTextView.setText(beer.abv + "%");
+        if(beer.abvInt==0){
+            abvTextView.setText("ABV n/a");
+        }
+        else{
+            abvTextView.setText(beer.abv + "%");
+        }
+        //abvTextView.setText(beer.abv + "%");
         abvTextView.setTextSize(12);
 
         styleTextView.setText(beer.style);
@@ -109,17 +114,19 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
 
         // imageView
         // use Picasso library to load image from the image url
-        Picasso.with(mContext).load("http://www.iemoji.com/view/emoji/429/food-drink/clinking-beer-mugs").into(thumbnailImageView);
+        Picasso.with(mContext).load(beer.imageUrl).into(thumbnailImageView);
 
         return convertView;
     }
 
     @Override
-    public Filter getFilter() {
+    public Filter getFilter(){
+
         return new Filter() {
             @Override
-            protected Filter.FilterResults performFiltering(CharSequence charSequence) {
+            protected FilterResults performFiltering(CharSequence charSequence) {
                 FilterResults results = new FilterResults();
+
                 //If there's nothing to filter on, return the original data for your list
                 if(charSequence == null || charSequence.length() == 0)
                 {
@@ -148,15 +155,14 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
 
                 return results;
             }
+
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 //System.out.print("Publish" + filterResults.values);
                 mBeerList = (ArrayList<Beer>)filterResults.values;
                 notifyDataSetChanged();
             }
-
         };
-
     }
 
     private static class ViewHolder {

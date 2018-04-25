@@ -33,7 +33,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button two = (Button) findViewById(R.id.camera_button);
         two.setOnClickListener(this);
 
-
     }
 
     @Override
@@ -42,7 +41,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.home_button:
-                Intent intent1 = new Intent(mContext, SearchActivity.class);
+                Intent intent1 = new Intent(mContext, BeerResultList.class);
 
 
                 startActivityForResult(intent1,1);

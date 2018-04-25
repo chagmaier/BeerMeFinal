@@ -24,23 +24,12 @@
         android:layout_toEndOf="@+id/beer_list_thumbnail">
 
         <TextView
-            android:id="@+id/beer_list_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:text="Beer name"
-            android:textSize="18sp" />
-
-        <TextView
             android:id="@+id/beer_list_abv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/beer_list_name"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="2dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="2dp"
-            android:maxLines="3"
             android:text="ABV"
             android:textSize="16sp" />
 
@@ -48,27 +37,33 @@
             android:id="@+id/beer_list_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/beer_list_name"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="2dp"
             android:layout_toRightOf="@id/beer_list_abv"
-            android:maxLines="3"
             android:text="Style"
-            android:textSize="16sp" />
+            />
         <TextView
             android:id="@+id/beer_list_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/beer_list_name"
-            android:layout_marginLeft="8dp"
+            android:layout_below="@id/beer_list_abv"
+            android:layout_marginLeft="2dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="2dp"
-            android:layout_toRightOf="@id/beer_list_style"
-            android:maxLines="3"
             android:text="Category"
-            android:textSize="16sp" />
+             />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/beer_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_alignTop="@+id/beer_list_thumbnail"
+        android:layout_toEndOf="@+id/beer_list_thumbnail"
+        android:text="Beer name"
+         />
 
 </RelativeLayout>

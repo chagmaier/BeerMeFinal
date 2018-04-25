@@ -40,15 +40,13 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.search_activity_view);
 
         //set onClick listener
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent resultIntent = new Intent(mContext, BeerResultList.class);
-
-                startActivity(resultIntent);
-            }
-        });
+//        searchButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent resultIntent = new Intent(mContext, BeerResultList.class);
+//                startActivity(resultIntent);
+//            }
+//        });
 
     }
 
