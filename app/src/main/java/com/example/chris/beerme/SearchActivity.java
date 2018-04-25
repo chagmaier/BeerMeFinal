@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * Created by Chris on 4/22/18.
  */
 
-public class SearchActivity extends AppCombatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     private SearchActivity mContext;
     private Spinner abvSpinner;
