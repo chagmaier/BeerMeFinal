@@ -8,7 +8,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -22,48 +25,52 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private SearchActivity mContext;
-    private Spinner abvSpinner;
-    private Spinner beerTypeSpinner;
+    private Context mContext;
+    private Button searchButton;
     private EditText searchBar;
     private TextView searchBelowTextView;
     private ListView mListView;
+    private ArrayList<Beer> beerList;
     BeerAdapter adapter;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_activity_view);
 
-        searchBar = findViewById(R.id.search_bar);
-        mContext = this;
-       // abvSpinner = findViewById(R.id.abv_dropdown);
-        //beerTypeSpinner = findViewById(R.id.beer_type_dropdown);
-
-        final ArrayList<Beer> beerList = Beer.getbeersFromFile("beers.json", this);
-
-        adapter = new BeerAdapter(this, beerList);
-        mListView = findViewById(R.id.search_recipe_list_view);
-        mListView.setAdapter(adapter);
-
-
-        searchBar.addTextChangedListener(new TextWatcher() {
+        //set onClick listener
+        searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onClick(View v) {
 
-            }
+                Intent resultIntent = new Intent(mContext, BeerResultList.class);
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                SearchActivity.this.adapter.getFilter().filter(charSequence.toString());
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
+                startActivity(resultIntent);
             }
         });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_items, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+
+            case R.id.action_camera:
+                startActivity(new Intent(this, CameraActivity.class));
+                return true;
+
+            case R.id.action_near_me:
+                //startActivity(new Intent(this, NearMeActivity.class));
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

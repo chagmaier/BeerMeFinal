@@ -5,83 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Search a Beer Name!"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_marginTop="45dp"
-        android:layout_height="match_parent"
-        android:id="@+id/search_recipe_list_view"
-
-        />
-
-
-
-    <!--<Spinner
-        android:id="@+id/abv_dropdown"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/search_bar"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="50dp"
-        android:textSize="16dp"
-        />
-
-    <Spinner
-        android:id="@+id/beer_type_dropdown"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/abv_dropdown"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:textSize="16dp"
-        />
-
-    <TextView
-        android:id="@+id/abv_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search_bar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:textStyle="bold"
-        android:text="ABV %"
-        android:textSize="16dp"
-        />
-
-    <TextView
-        android:id="@+id/beer_type_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/search_bar"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_below="@+id/abv_dropdown"
-        android:textStyle="bold"
-        android:text="Beer Type"
-        android:textSize="16dp" />
-
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/beer_type_dropdown"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:text="Button" />-->
+        android:layout_marginBottom="36dp"
+        android:text="Search" />
 
 
 </RelativeLayout>

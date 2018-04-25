@@ -35,7 +35,7 @@ public class Beer {
     // static method that loads our beers.json using the helper method
     // this method will return an array list of beers constructed from the JSON
     // file
-    public static ArrayList<Beer> getbeersFromFile(String filename, SearchActivity context) {
+    public static ArrayList<Beer> getbeersFromFile(String filename, BeerResultList context) {
         ArrayList<Beer> beerList = new ArrayList<Beer>();
 
 
@@ -65,6 +65,7 @@ public class Beer {
                 //convert serving number from string to int
                 double servingInt = Double.parseDouble(beer.abv);
 
+                /*
                 // add abv category to each beer
                 if(servingInt < 4) {
                     beer.abvLabel = "Less Than 4%";
@@ -138,7 +139,7 @@ public class Beer {
                 //set styleLable and abv % category for each beer
                 beer.searchLabel.add(beer.style);
                 beer.searchLabel.add(beer.abvLabel);
-
+*/
                 //add beer to arraylist of beers
                 beerList.add(beer);
             }
