@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toolbar;
 
 /**
  * Created by Matt on 4/10/2018.
@@ -29,9 +31,11 @@ public class HomeActiviy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+       /*
         mContext = this;
         mMainFrame = findViewById(R.id.main_frame);
         mMainNav = findViewById(R.id.main_nav);
+
 
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -55,7 +59,7 @@ public class HomeActiviy extends AppCompatActivity {
             }
         });
 
-
+*/
 
         /*
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -76,7 +80,32 @@ public class HomeActiviy extends AppCompatActivity {
         });
         */
 
+
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_items, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+
+            case R.id.action_camera:
+                startActivity(new Intent(this, CameraActivity.class));
+                return true;
+
+            case R.id.action_near_me:
+                //startActivity(new Intent(this, NearMeActivity.class));
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void launchBeerResultList (){
         Intent intent = new Intent(mContext, BeerResultList.class);
         startActivityForResult(intent, 1);

@@ -8,17 +8,7 @@
     android:background="@color/lightTan"
     tools:context="com.example.chris.beerme.MainActivity">
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/main_nav"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        app:itemTextColor="#FFFFFF"
-        android:layout_alignParentStart="true"
-        app:itemBackground="@color/lightGray"
-        app:menu="@menu/nav_items"
-        >
-    </android.support.design.widget.BottomNavigationView>
+
 
     <TextView
         android:id="@+id/welcome_text"
@@ -54,7 +44,7 @@
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/main_nav"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         >

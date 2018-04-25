@@ -17,7 +17,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="45dp"
         android:layout_height="match_parent"
         android:id="@+id/search_recipe_list_view"
 
@@ -82,19 +82,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:text="Button" />-->
-
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/main_nav"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"
-        app:itemTextColor="#FFFFFF"
-        android:layout_alignParentStart="true"
-        app:itemBackground="@color/lightGray"
-        app:menu="@menu/nav_items"
-        >
-    </android.support.design.widget.BottomNavigationView>
 
 
 </RelativeLayout>

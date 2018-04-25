@@ -25,7 +25,6 @@ public class SearchActivity extends AppCompatActivity {
     private SearchActivity mContext;
     private Spinner abvSpinner;
     private Spinner beerTypeSpinner;
-    private BottomNavigationView mMainNav;
     private EditText searchBar;
     private TextView searchBelowTextView;
     private ListView mListView;
@@ -48,29 +47,6 @@ public class SearchActivity extends AppCompatActivity {
         mListView = findViewById(R.id.search_recipe_list_view);
         mListView.setAdapter(adapter);
 
-        mMainNav = findViewById(R.id.main_nav);
-
-        mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()) {
-
-                    case R.id.nav_home:
-                        Intent intent1 = new Intent(SearchActivity.this, MainActivity.class);
-                        startActivity(intent1);
-                        break;
-                    case R.id.nav_nearme:
-                        Intent intent2 = new Intent(SearchActivity.this, HomeActiviy.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.nav_search:
-                        Intent intent3 = new Intent(SearchActivity.this, SearchActivity.class);
-                        startActivity(intent3);
-                        break;
-                }
-                return false;
-            }
-        });
 
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
