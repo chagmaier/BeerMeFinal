@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView
+        android:id="@+id/name_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:gravity="center"
+        android:text="beer name"
+        android:textSize="33dp"
+        android:textStyle="bold|italic" />
+    <ImageView
+        android:id="@+id/image_detail"
+        android:layout_width="176dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name_detail"
+        android:layout_marginTop="38dp"
+        app:srcCompat="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/name_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="41dp"
-            android:text="beer name"
-            android:textSize="30dp" />
+    <TextView
+        android:id="@+id/abv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/style_detail"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/image_detail"
+        android:text="ABV"
+        android:textSize="18dp"
+        android:textStyle="bold|italic" />
 
-        <ImageView
-            android:id="@+id/image_detail"
-            android:layout_width="140dp"
-            android:layout_height="230dp"
-            android:scaleType="fitCenter"
-            android:layout_gravity="center"
-            app:srcCompat="@mipmap/ic_launcher" />
+    <TextView
+        android:id="@+id/style_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/abv_detail"
+        android:layout_centerVertical="true"
+        android:text="STYLE"
+        android:textSize="18dp"
+        android:textStyle="bold|italic" />
 
+    <TextView
+        android:id="@+id/description_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_detail"
+        android:layout_marginLeft="12dp"
+        android:text="description"
+        android:textSize="12dp" />
 
-        <TextView
-            android:id="@+id/abv_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:textSize="12dp"
-            android:textStyle="bold|italic"
-            android:text="ABV" />
-
-        <TextView
-            android:id="@+id/style_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="12dp"
-            android:textSize="12dp"
-            android:textStyle="bold|italic"
-            android:text="STYLE" />
-
-        <TextView
-            android:id="@+id/description_detail"
-            android:layout_width="match_parent"
-            android:layout_below="@id/abv_detail"
-            android:layout_marginTop="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_height="wrap_content"
-            android:textSize="12dp"
-            android:text="description" />
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>
 
 
