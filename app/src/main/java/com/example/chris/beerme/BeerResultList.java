@@ -105,6 +105,11 @@ public class BeerResultList extends AppCompatActivity {
                 startActivity(new Intent(this, CameraActivity.class));
                 return true;
 
+            case R.id.action_title:
+                startActivity(new Intent(this, SearchActivity.class));
+                return true;
+
+
             case R.id.action_near_me:
                 //startActivity(new Intent(this, NearMeActivity.class));
                 return true;

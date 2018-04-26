@@ -6,11 +6,22 @@
         android:id="@+id/action_camera"
         android:icon="@drawable/search"
         android:title="@String/action_camera"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        />
+
+    <item
+        android:id="@+id/action_title"
+        android:icon="@drawable/beer_neon"
+        android:title="@string/app_name"
+        app:showAsAction="always"
+        android:orderInCategory="2"/>
+
 
     <item
         android:id="@+id/action_near_me"
         android:icon="@drawable/store"
+        android:orderInCategory="3"
         android:title="@String/action_near_me"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 </menu>

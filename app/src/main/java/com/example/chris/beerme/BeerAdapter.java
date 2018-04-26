@@ -1,7 +1,6 @@
 package com.example.chris.beerme;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * Created by Matt on 4/10/2018.
  */
 
-public class BeerAdapter extends BaseAdapter implements Filterable {
+public class BeerAdapter extends BaseAdapter implements Filterable{
 
     // adapter takes the app itself and a list of data to display
     private Context mContext;
@@ -84,7 +84,7 @@ public class BeerAdapter extends BaseAdapter implements Filterable {
         }
 
         // get corresonpinding recipe for each row
-        Beer beer = (Beer) getItem(position);
+        final Beer beer = (Beer) getItem(position);
 
         // get relavate subview of the row view
         TextView nameTextView = holder.nameTextView;
@@ -98,13 +98,7 @@ public class BeerAdapter extends BaseAdapter implements Filterable {
         nameTextView.setText(beer.name);
         nameTextView.setTextSize(18);
 
-        if(beer.abvInt==0){
-            abvTextView.setText("ABV n/a");
-        }
-        else{
-            abvTextView.setText(beer.abv + "%");
-        }
-        //abvTextView.setText(beer.abv + "%");
+        abvTextView.setText(beer.abv + "%");
         abvTextView.setTextSize(12);
 
         styleTextView.setText(beer.style);
@@ -115,22 +109,17 @@ public class BeerAdapter extends BaseAdapter implements Filterable {
 
         // imageView
         // use Picasso library to load image from the image url
-        //thumbnailImageView.setImageDrawable(getDrawable(R.drawable.beerimage));
-        Picasso.with(mContext).load(R.drawable.beerimage).into(thumbnailImageView);
-//        thumbnailImageView.getLayoutParams().height = 20;
-//        thumbnailImageView.getLayoutParams().width = 20;
+        Picasso.with(mContext).load("http://www.iemoji.com/view/emoji/429/food-drink/clinking-beer-mugs").into(thumbnailImageView);
 
         return convertView;
     }
 
     @Override
-    public Filter getFilter(){
-
+    public Filter getFilter() {
         return new Filter() {
             @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
+            protected Filter.FilterResults performFiltering(CharSequence charSequence) {
                 FilterResults results = new FilterResults();
-
                 //If there's nothing to filter on, return the original data for your list
                 if(charSequence == null || charSequence.length() == 0)
                 {
@@ -159,14 +148,15 @@ public class BeerAdapter extends BaseAdapter implements Filterable {
 
                 return results;
             }
-
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 //System.out.print("Publish" + filterResults.values);
                 mBeerList = (ArrayList<Beer>)filterResults.values;
                 notifyDataSetChanged();
             }
+
         };
+
     }
 
     private static class ViewHolder {
