@@ -1,6 +1,7 @@
 package com.example.chris.beerme;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  * Created by Matt on 4/10/2018.
  */
 
-public class BeerAdapter extends BaseAdapter implements Filterable{
+public class BeerAdapter extends BaseAdapter implements Filterable {
 
     // adapter takes the app itself and a list of data to display
     private Context mContext;
@@ -114,7 +115,10 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
 
         // imageView
         // use Picasso library to load image from the image url
-        Picasso.with(mContext).load(beer.imageUrl).into(thumbnailImageView);
+        //thumbnailImageView.setImageDrawable(getDrawable(R.drawable.beerimage));
+        Picasso.with(mContext).load(R.drawable.beerimage).into(thumbnailImageView);
+//        thumbnailImageView.getLayoutParams().height = 20;
+//        thumbnailImageView.getLayoutParams().width = 20;
 
         return convertView;
     }
