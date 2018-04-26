@@ -24,8 +24,7 @@
             />
     </RelativeLayout>
 
-
-    <GridLayout
+    <GridView
         android:id="@+id/search_grid"
         android:columnCount="2"
         android:rowCount="3"
@@ -36,262 +35,260 @@
         android:layout_height="0dp"
         android:padding="14dp">
 
-        <!--row 1-->
-        <!--column 1-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+        <!--&lt;!&ndash;row 1&ndash;&gt;-->
+        <!--&lt;!&ndash;column 1&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
-                
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-        <!--column 2-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
+                <!---->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
 
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
-        </android.support.v7.widget.CardView>
+        <!--</android.support.v7.widget.CardView>-->
+        <!--&lt;!&ndash;column 2&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
 
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
 
-        <!--row 2-->
-        <!--column 1-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
 
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
-        </android.support.v7.widget.CardView>
-        <!--column 2-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
+        <!--</android.support.v7.widget.CardView>-->
 
 
-            </LinearLayout>
+        <!--&lt;!&ndash;row 2&ndash;&gt;-->
+        <!--&lt;!&ndash;column 1&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
 
-        </android.support.v7.widget.CardView>
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
 
-
-        <!--row 3-->
-        <!--column 1-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
 
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
-        </android.support.v7.widget.CardView>
-        <!--column 2-->
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+        <!--</android.support.v7.widget.CardView>-->
+        <!--&lt;!&ndash;column 2&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
 
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/beerimage"
-                    android:layout_gravity="center_horizontal"
-                    />
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Beeeeer"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    />
-
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </GridLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
 
 
+            <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+
+        <!--&lt;!&ndash;row 3&ndash;&gt;-->
+        <!--&lt;!&ndash;column 1&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
+
+
+            <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+        <!--&lt;!&ndash;column 2&ndash;&gt;-->
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:layout_rowWeight="1"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginBottom="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--app:cardElevation="8dp"-->
+            <!--app:cardCornerRadius="8dp"-->
+            <!--&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--android:layout_margin="16dp"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="60dp"-->
+                    <!--android:layout_height="60dp"-->
+                    <!--android:src="@drawable/beerimage"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Beeeeer"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--/>-->
+
+
+            <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+    </GridView>
 
 </LinearLayout>

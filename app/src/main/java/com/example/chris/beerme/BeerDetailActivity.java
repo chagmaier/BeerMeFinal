@@ -22,11 +22,8 @@ public class BeerDetailActivity extends AppCompatActivity {
     private ImageView beerImage;
     private TextView descriptionText;
     private TextView styleText;
-    private TextView categoryText;
+    private TextView ABVText;
 
-    private boolean seenChecked;
-    private boolean wantChecked;
-    private boolean dontLikeChecked;
 
 
     private Button submitButton;
@@ -40,14 +37,20 @@ public class BeerDetailActivity extends AppCompatActivity {
         nameText = findViewById(R.id.name_detail);
         beerImage= findViewById(R.id.image_detail);
         descriptionText= findViewById(R.id.description_detail);
+        styleText = findViewById(R.id.style_detail);
+        ABVText = findViewById(R.id.abv_detail);
 
-        String title = this.getIntent().getExtras().getString("name");
+        String name = this.getIntent().getExtras().getString("name");
         String description = this.getIntent().getExtras().getString("description");
+        String abv = this.getIntent().getExtras().getString("abv");
+        String style = this.getIntent().getExtras().getString("style");
         beerImage.setImageDrawable(getDrawable(R.drawable.beerimage));
         final int position = this.getIntent().getExtras().getInt("position");
-        setTitle(title);
+        setTitle(name);
         descriptionText.setText(description);
-        nameText.setText(title);
+        nameText.setText(name);
+        styleText.setText(style);
+        ABVText.setText(abv + "% Alcohol");
 
     }
 }

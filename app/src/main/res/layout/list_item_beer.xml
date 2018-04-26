@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="8dp"
             android:text="ABV"
             android:textSize="16sp" />
 
@@ -39,8 +39,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="8dp"
             android:layout_toRightOf="@id/beer_list_abv"
+            android:textSize="16sp"
             android:text="Style"
             />
         <TextView
@@ -51,6 +52,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="2dp"
+            android:textSize="16sp"
             android:text="Category"
              />
 

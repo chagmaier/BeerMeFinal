@@ -29,9 +29,11 @@
         <activity android:name=".SearchActivity">
 
         </activity>
-        <activity android:name=".BeerResultList">
+        <activity android:name=".BeerResultList"
+            android:windowSoftInputMode="stateHidden">
 
         </activity>
+
         <activity android:name=".BeerDetailActivity">
 
         </activity>

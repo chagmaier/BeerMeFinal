@@ -65,6 +65,7 @@ public class BeerResultList extends AppCompatActivity {
                 detailIntent.putExtra("description",selectedBeer.description);
                 detailIntent.putExtra("style",selectedBeer.style);
                 detailIntent.putExtra("category",selectedBeer.category);
+                detailIntent.putExtra("abv",selectedBeer.abv);
 
                 launchActivity(detailIntent);
 

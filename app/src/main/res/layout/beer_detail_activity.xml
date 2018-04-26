@@ -32,10 +32,31 @@
 
 
         <TextView
-            android:id="@+id/description_detail"
+            android:id="@+id/abv_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            android:text="ABV" />
+
+        <TextView
+            android:id="@+id/style_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="12dp"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            android:text="STYLE" />
+
+        <TextView
+            android:id="@+id/description_detail"
+            android:layout_width="match_parent"
+            android:layout_below="@id/abv_detail"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="wrap_content"
             android:textSize="12dp"
             android:text="description" />
 
