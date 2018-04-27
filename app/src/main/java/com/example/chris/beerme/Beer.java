@@ -127,9 +127,6 @@ public class Beer {
                 else if (beer.style.contains("Porter")){
                     beer.styleLabel = "Porter";
                 }
-                else if (beer.style.contains("Golden")){
-                    beer.styleLabel = "Golden";
-                }
                 else if (beer.style.contains("Red")){
                     beer.styleLabel = "Red";
                 }
@@ -138,6 +135,9 @@ public class Beer {
                 }
                 else if (beer.style.contains("Wheat")){
                     beer.styleLabel = "Wheat";
+                }
+                else if (beer.style.contains("White")){
+                    beer.styleLabel = "White";
                 }
                 else {
                     beer.styleLabel = "Other";

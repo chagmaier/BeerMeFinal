@@ -96,6 +96,10 @@ public class SearchActivity extends AppCompatActivity {
                 int test = view.getSolidColor();
                 //getResources().getIdentifier("grid_row_border","drawable","com.example.chris.beerme");
 
+
+
+
+
 //                int origbgint = R.drawable.grid_row_border;
 //                Drawable origbackground = getDrawable(origbgint);
 //                int changedbgint = R.drawable.grid_row_border_changed;
@@ -109,9 +113,10 @@ public class SearchActivity extends AppCompatActivity {
 
                 if (view.getSolidColor() != changedbgcolor) {
                     view.setBackgroundColor(changedbgcolor);
-                } else if(view.getSolidColor()==changedbgcolor){
+                } if(view.getSolidColor()==changedbgcolor){
                     view.setBackgroundColor(originalbgcolor);
                 }
+
                 //System.out.println(view.getSolidColor());
                 //view.setBackgroundColor(Color.parseColor("#fc9c0c"));
                 String selectedStyle = styleLabelList.get(position);
