@@ -3,6 +3,8 @@ package com.example.chris.beerme;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -23,6 +25,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -46,7 +49,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_activity_view);
 
-        ArrayList<String> styleList = new ArrayList<String>();
+        final ArrayList<String> styleList = new ArrayList<String>();
         final ArrayList<Beer> beerList = Beer.getbeersFromFile("beers.json", this);
         for(int i = 0; i<beerList.size(); i++) {
             String newStyleLabel = beerList.get(i).style;
@@ -65,8 +68,6 @@ public class SearchActivity extends AppCompatActivity {
         gridTextView = findViewById(R.id.grid_text_view);
         mainGrid = findViewById(R.id.search_grid);
 
-        //setSingleEvent(mainGrid);
-
         gridAdapter = new GridAdapter(this, styleList);
 
         mainGrid.setAdapter(gridAdapter);
@@ -77,14 +78,44 @@ public class SearchActivity extends AppCompatActivity {
 
         clickedStyleArray = new ArrayList<String>();
 
-        //set onClick listener
-//        mainGrid.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String selectedStyle =
-//            }
-//        });
+        mainGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int originalbgcolor = getResources().getColor(R.color.lightBlue);
+                int changedbgcolor = getResources().getColor(R.color.styleClickedBG);
+                int test2 = getResources().getColor(R.color.colorWhite);
+                int test = view.getSolidColor();
+                //getResources().getIdentifier("grid_row_border","drawable","com.example.chris.beerme");
 
+//                int origbgint = R.drawable.grid_row_border;
+//                Drawable origbackground = getDrawable(origbgint);
+//                int changedbgint = R.drawable.grid_row_border_changed;
+//                Drawable changedbackground = getDrawable(changedbgint);
+//                if(view.getBackground() == origbackground) {
+//                    view.setBackground(changedbackground);
+//                }
+//                else{
+//                    view.setBackground(origbackground);
+//                }
+
+                if (view.getSolidColor() != changedbgcolor) {
+                    view.setBackgroundColor(changedbgcolor);
+                } else if(view.getSolidColor()==changedbgcolor){
+                    view.setBackgroundColor(originalbgcolor);
+                }
+                System.out.println(view.getSolidColor());
+                //view.setBackgroundColor(Color.parseColor("#fc9c0c"));
+                String selectedStyle = styleList.get(position);
+                for(int i = 0; i<beerList.size(); i++) {
+                    //if the array doesn't already contain this style, add it
+                    if(!clickedStyleArray.contains(selectedStyle)) {
+                        clickedStyleArray.add(selectedStyle);
+                    }
+                }
+
+                System.out.println(clickedStyleArray.get(clickedStyleArray.size()-1));
+            }
+        });
     }
 
     private void setSingleEvent(GridView mainGrid) {
@@ -116,7 +147,6 @@ public class SearchActivity extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
