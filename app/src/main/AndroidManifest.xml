@@ -37,6 +37,11 @@
         <activity android:name=".BeerDetailActivity">
 
         </activity>
+
+        <activity android:name=".SearchResultsActivity"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr"/>
     </application>

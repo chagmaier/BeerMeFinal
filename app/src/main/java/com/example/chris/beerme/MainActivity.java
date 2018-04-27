@@ -14,8 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 
-
-
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private Context mContext;
@@ -32,7 +30,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button two = (Button) findViewById(R.id.camera_button);
         two.setOnClickListener(this);
-
     }
 
     @Override
@@ -41,14 +38,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.home_button:
-                Intent intent1 = new Intent(mContext, SearchActivity.class);
+                Intent intent1 = new Intent(mContext, BeerResultList.class);
 
 
                 startActivityForResult(intent1,1);
                 break;
 
             case R.id.camera_button:
-                Intent intent2 = new Intent(mContext, CameraActivity.class);
+                Intent intent2 = new Intent(mContext, SearchActivity.class);
 
                 startActivityForResult(intent2,1);
                 break;

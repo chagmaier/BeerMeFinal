@@ -1,6 +1,8 @@
 package com.example.chris.beerme;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 public class Beer {
 
+    private static Context mContext;
     public String name;
     public String abv;
     public double abvInt;
@@ -37,7 +40,6 @@ public class Beer {
     // file
     public static ArrayList<Beer> getbeersFromFile(String filename, Context context) {
         ArrayList<Beer> beerList = new ArrayList<Beer>();
-
 
         // try to read from JSON file
         // get information by using the tags
@@ -121,6 +123,9 @@ public class Beer {
                 }
                 else if (beer.style.contains("Pilsner")){
                     beer.styleLabel = "Pilsner";
+                }
+                else if (beer.style.contains("Porter")){
+                    beer.styleLabel = "Porter";
                 }
                 else if (beer.style.contains("Golden")){
                     beer.styleLabel = "Golden";

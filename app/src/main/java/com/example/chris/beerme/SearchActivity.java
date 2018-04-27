@@ -37,9 +37,9 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity {
 
     private Context mContext;
-    private Button searchButton;
     private TextView gridTextView;
     private ListView mListView;
+    private Button searchButton;
     private GridView mainGrid;
     private ArrayList<String> clickedStyleArray;
     GridAdapter gridAdapter;
@@ -60,16 +60,25 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
+        final ArrayList<String> styleLabelList = new ArrayList<String>();
+        for(int i = 0; i<beerList.size(); i++) {
+            String newStyleLabel = beerList.get(i).styleLabel;
+
+            //if the array doesn't already contain this style, add it
+            if(!styleLabelList.contains(newStyleLabel)) {
+                styleLabelList.add(newStyleLabel);
+            }
+        }
+
+
         mContext = this;
         //arraylists for restrictions
-        //final ArrayList<Beer> recipeList = Beer.getbeersFromFile("beers.json", this);
-        ArrayList<String> dietRestrictionLabel = new ArrayList<>();
 
         gridTextView = findViewById(R.id.grid_text_view);
         mainGrid = findViewById(R.id.search_grid);
 
-        gridAdapter = new GridAdapter(this, styleList);
-
+        gridAdapter = new GridAdapter(this, styleLabelList);
+        searchButton = findViewById(R.id.search_button);
         mainGrid.setAdapter(gridAdapter);
 
         mContext=this;
@@ -103,9 +112,9 @@ public class SearchActivity extends AppCompatActivity {
                 } else if(view.getSolidColor()==changedbgcolor){
                     view.setBackgroundColor(originalbgcolor);
                 }
-                System.out.println(view.getSolidColor());
+                //System.out.println(view.getSolidColor());
                 //view.setBackgroundColor(Color.parseColor("#fc9c0c"));
-                String selectedStyle = styleList.get(position);
+                String selectedStyle = styleLabelList.get(position);
                 for(int i = 0; i<beerList.size(); i++) {
                     //if the array doesn't already contain this style, add it
                     if(!clickedStyleArray.contains(selectedStyle)) {
@@ -116,6 +125,18 @@ public class SearchActivity extends AppCompatActivity {
                 System.out.println(clickedStyleArray.get(clickedStyleArray.size()-1));
             }
         });
+
+        searchButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                Intent resultIntent = new Intent(mContext, SearchResultsActivity.class);
+                resultIntent.putExtra("beerStylesList", clickedStyleArray);
+                startActivity(resultIntent);
+            }
+        });
+
+
     }
 
     private void setSingleEvent(GridView mainGrid) {

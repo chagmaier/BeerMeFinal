@@ -109,7 +109,7 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
 
         // imageView
         // use Picasso library to load image from the image url
-        Picasso.with(mContext).load("http://www.iemoji.com/view/emoji/429/food-drink/clinking-beer-mugs").into(thumbnailImageView);
+        Picasso.with(mContext).load(R.drawable.beerpic1).into(thumbnailImageView);
 
         return convertView;
     }
