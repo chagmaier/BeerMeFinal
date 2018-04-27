@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.home_button:
-                Intent intent1 = new Intent(mContext, BeerResultList.class);
+                Intent intent1 = new Intent(mContext, SearchActivity.class);
 
 
                 startActivityForResult(intent1,1);
