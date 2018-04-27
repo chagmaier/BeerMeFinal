@@ -81,32 +81,13 @@ public class GridAdapter extends BaseAdapter {
         String beerStlye = (String) getItem(position);
       //  Beer beer = (Beer) getItem(position);
 
-        // get relavate subview of the row view
-//        TextView nameTextView = holder.nameTextView;
-//        TextView abvTextView = holder.abvTextView;
         TextView styleTextView = holder.styleTextView;
 //        TextView categoryTextView = holder.categoryTextView;
         ImageView thumbnailImageView = holder.thumbnailImageView;
-//        TextView numberOfRecipesTextView = holder.numberOfRecipesTextView;
-
-        // update the row view's textviews and imageview to display the information
-//        nameTextView.setText(beer.name);
-//        nameTextView.setTextSize(18);
 //
-//        if(beer.abvInt==0){
-//            abvTextView.setText("ABV n/a");
-//        }
-//        else{
-//            abvTextView.setText(beer.abv + "%");
-//        }
-//        //abvTextView.setText(beer.abv + "%");
-//        abvTextView.setTextSize(12);
-
         styleTextView.setText(beerStlye);
         styleTextView.setTextSize(12);
 
-//        categoryTextView.setText(beer.category);
-//        categoryTextView.setTextSize(12);
 
         // imageView
         // use Picasso library to load image from the image url

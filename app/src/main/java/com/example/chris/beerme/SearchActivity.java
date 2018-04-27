@@ -23,6 +23,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -36,6 +38,7 @@ public class SearchActivity extends AppCompatActivity {
     private TextView gridTextView;
     private ListView mListView;
     private GridView mainGrid;
+    private ArrayList<String> clickedStyleArray;
     GridAdapter gridAdapter;
 
     @Override
@@ -62,7 +65,7 @@ public class SearchActivity extends AppCompatActivity {
         gridTextView = findViewById(R.id.grid_text_view);
         mainGrid = findViewById(R.id.search_grid);
 
-        setSingleEvent(mainGrid);
+        //setSingleEvent(mainGrid);
 
         gridAdapter = new GridAdapter(this, styleList);
 
@@ -72,12 +75,13 @@ public class SearchActivity extends AppCompatActivity {
         //final ArrayList<Beer> beerList = Beer.getbeersFromFile("beers.json", this);
        // mListView.setAdapter(gridAdapter);
 
+        clickedStyleArray = new ArrayList<String>();
+
         //set onClick listener
-//        searchButton.setOnClickListener(new View.OnClickListener() {
+//        mainGrid.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent resultIntent = new Intent(mContext, BeerResultList.class);
-//                startActivity(resultIntent);
+//                String selectedStyle =
 //            }
 //        });
 
