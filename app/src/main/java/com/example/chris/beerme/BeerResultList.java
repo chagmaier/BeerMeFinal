@@ -2,6 +2,7 @@ package com.example.chris.beerme;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -111,12 +112,43 @@ public class BeerResultList extends AppCompatActivity {
 
 
             case R.id.action_near_me:
-                //startActivity(new Intent(this, NearMeActivity.class));
+                startActivity(new Intent(this, MapActivity.class));
                 return true;
 
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void openMap(View view){
+        // APIs for location stuff
+        // send a static string with location - long and lat
+        Uri geoLocation = null;
+
+        // 34.1260° N, 118.2142° W
+        //String location = "geo:34.1260,-118.2142";
+        String location = "google.streetview:cbll=34.1260,-118.2142";
+        //String longString = longitude.getText().toString();
+        //String latString = latitude.getText().toString();
+
+        //String location = "geo:" + longString + "," + latString;
+        geoLocation = Uri.parse(location);
+
+        // set up an intent
+        // pack the geoLoaction to the intent
+        Intent intent = new Intent(Intent.ACTION_VIEW); // implicit, no sedtination needed
+        intent.setData(geoLocation);
+
+        // if there is any app that can recieve this intent
+        // start the app with the intent
+        System.out.println(intent.resolveActivity(getPackageManager()));
+        if (intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }
+
+    }
+
+
+
     public void launchActivity(Intent intent){
         startActivityForResult(intent,1);
     }
