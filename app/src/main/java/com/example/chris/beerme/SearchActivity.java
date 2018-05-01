@@ -38,7 +38,6 @@ public class SearchActivity extends AppCompatActivity {
 
     private Context mContext;
     private TextView gridTextView;
-    private ListView mListView;
     private Button searchButton;
     private GridView mainGrid;
     private ArrayList<String> clickedStyleArray;
@@ -70,23 +69,15 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
-
         mContext = this;
         //arraylists for restrictions
-
         gridTextView = findViewById(R.id.grid_text_view);
         mainGrid = findViewById(R.id.search_grid);
-
         gridAdapter = new GridAdapter(this, styleLabelList);
         searchButton = findViewById(R.id.search_button);
         mainGrid.setAdapter(gridAdapter);
 
-        mContext=this;
-        //final ArrayList<Beer> beerList = Beer.getbeersFromFile("beers.json", this);
-       // mListView.setAdapter(gridAdapter);
-
         clickedStyleArray = new ArrayList<String>();
-
         mainGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -95,10 +86,6 @@ public class SearchActivity extends AppCompatActivity {
                 int test2 = getResources().getColor(R.color.colorWhite);
                 int test = view.getSolidColor();
                 //getResources().getIdentifier("grid_row_border","drawable","com.example.chris.beerme");
-
-
-
-
 
 //                int origbgint = R.drawable.grid_row_border;
 //                Drawable origbackground = getDrawable(origbgint);

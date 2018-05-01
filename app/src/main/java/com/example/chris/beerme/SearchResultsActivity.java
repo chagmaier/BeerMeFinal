@@ -30,9 +30,6 @@ public class SearchResultsActivity extends AppCompatActivity {
         final ArrayList<Beer> beerList = Beer.getbeersFromFile("beers.json",this);
         ArrayList<String> clickedBeerStyles = this.getIntent().getExtras().getStringArrayList("beerStylesList");
 
-        System.out.println(beerList.get(0).name.toString());
-        System.out.println(clickedBeerStyles.get(0).toString());
-
         for(int i = 0; i<beerList.size(); i++){
             for (int k =0; k<clickedBeerStyles.size(); k++){
                 if(beerList.get(i).style.toString().contains(clickedBeerStyles.get(k).toString())){
@@ -40,10 +37,6 @@ public class SearchResultsActivity extends AppCompatActivity {
                 }
             }
         }
-        System.out.println(beerList.get(0).name);
-        System.out.println(clickedBeerStyles.get(0).toString());
-        System.out.println(resultBeers.get(0).name);
-        System.out.println(resultBeers.size());
         if (resultBeers.size()>0){
             adapter = new BeerAdapter(this, resultBeers);
         }
