@@ -1,6 +1,7 @@
 package com.example.chris.beerme;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -43,7 +44,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         GoogleMap.OnMyLocationClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
-
+   private Context mContext;
    private GoogleMap mMap;
    private Location lastLocation = null;
    private FusedLocationProviderClient mFusedLocationProviderClient;
@@ -62,6 +63,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_maps);
+      mContext=this;
       mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
       // Obtain the SupportMapFragment and get notified when the map is ready to be used.
       SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
