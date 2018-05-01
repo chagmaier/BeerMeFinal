@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chris.beerme">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -74,7 +75,8 @@
         <!-- embeds the version of Google Play services the app was compiled with -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="12451000" />
+            android:value="12451000"
+            tools:replace="android:value"/>
 
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAgIpv8BENp1iUdaSBFvLV4lBb1M9d-IlM"/>
