@@ -176,7 +176,7 @@ public class SearchActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_near_me:
-                //startActivity(new Intent(this, NearMeActivity.class));
+                startActivity(new Intent(this, MapActivity.class));
                 return true;
 
         }
