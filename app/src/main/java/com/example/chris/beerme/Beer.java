@@ -29,6 +29,7 @@ public class Beer {
     public String styleLabel;
     public String abvLabel;
     public ArrayList<String> searchLabel;
+    public int clickCounter;
     // constructor
     // default
 
@@ -63,6 +64,7 @@ public class Beer {
                 beer.category = beers.getJSONObject(i).getString("cat_name");
                 beer.searchLabel = new ArrayList<>();
                 beer.rowNumber = i;
+                beer.clickCounter = 0;
 
                 beer.abvInt = Double.parseDouble(beer.abv);
 

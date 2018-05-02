@@ -42,6 +42,7 @@ public class SearchActivity extends AppCompatActivity {
     private GridView mainGrid;
     private ArrayList<String> clickedStyleArray;
     GridAdapter gridAdapter;
+    private int counter =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +84,8 @@ public class SearchActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int originalbgcolor = getResources().getColor(R.color.lightBlue);
                 int changedbgcolor = getResources().getColor(R.color.styleClickedBG);
-                int test2 = getResources().getColor(R.color.colorWhite);
                 int test = view.getSolidColor();
+                Beer selectedBeer = beerList.get(position);
                 //getResources().getIdentifier("grid_row_border","drawable","com.example.chris.beerme");
 
 //                int origbgint = R.drawable.grid_row_border;
@@ -98,11 +99,18 @@ public class SearchActivity extends AppCompatActivity {
 //                    view.setBackground(origbackground);
 //                }
 
-                if (view.getSolidColor() != changedbgcolor) {
-                    view.setBackgroundColor(changedbgcolor);
-                } if(view.getSolidColor()==changedbgcolor){
-                    view.setBackgroundColor(originalbgcolor);
+                if (view.getSolidColor() == test) {
+                    selectedBeer.clickCounter ++;
+                    if(selectedBeer.clickCounter%2==1){
+                        view.setBackgroundColor(changedbgcolor);
+                    }
+                    else{
+                        view.setBackgroundColor(originalbgcolor);
+                    }
                 }
+//                if(view.getSolidColor()==changedbgcolor){
+//                    view.setBackgroundColor(originalbgcolor);
+//                }
 
                 //System.out.println(view.getSolidColor());
                 //view.setBackgroundColor(Color.parseColor("#fc9c0c"));
@@ -128,36 +136,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-
-    }
-
-    private void setSingleEvent(GridView mainGrid) {
-        //parse through grid items
-        for(int i=0; i<mainGrid.getChildCount(); i++){
-            CardView cardView = (CardView)mainGrid.getChildAt(i);
-//            cardView.setOnClickListener(new AdapterView.OnClickListener(){
-//                @Override
-//                public void onClick(View view){
-//                    Beer selectedBeer = beerList.get(position);
-//
-//                    // create my intent package
-//                    // add all the information needed for detail page
-//                    // startActivity with that intent
-//
-//                    //explicit
-//                    // from, to
-//                    Intent detailIntent = new Intent(mContext, BeerDetailActivity.class);
-//                    //put title and instruction URL
-//                    detailIntent.putExtra("name", selectedBeer.name);
-//                    // detailIntent.putExtra("beerImage", selectedBeer.imageUrl);
-//                    detailIntent.putExtra("description",selectedBeer.description);
-//                    detailIntent.putExtra("style",selectedBeer.style);
-//                    detailIntent.putExtra("category",selectedBeer.category);
-//
-//                    launchActivity(detailIntent);
-//                }
-//            });
-        }
 
     }
 

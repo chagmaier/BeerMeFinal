@@ -1,18 +1,23 @@
 package com.example.chris.beerme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by Matt on 4/10/2018.
@@ -74,6 +79,8 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
             holder.thumbnailImageView = convertView.findViewById(R.id.beer_list_thumbnail);
             holder.styleTextView = convertView.findViewById(R.id.beer_list_style);
             holder.categoryTextView = convertView.findViewById(R.id.beer_list_category);
+            holder.relativeLayout = convertView.findViewById(R.id.list_beer);
+            holder.clickCounter = 0;
 
             //add holder to the view for future use
             convertView.setTag(holder);
@@ -93,6 +100,7 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
         TextView categoryTextView = holder.categoryTextView;
         ImageView thumbnailImageView = holder.thumbnailImageView;
         TextView numberOfRecipesTextView = holder.numberOfRecipesTextView;
+        RelativeLayout relativeLayout = holder.relativeLayout;
 
         // update the row view's textviews and imageview to display the information
         nameTextView.setText(beer.name);
@@ -110,6 +118,35 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
         // imageView
         // use Picasso library to load image from the image url
         Picasso.with(mContext).load(R.drawable.beerpic1).into(thumbnailImageView);
+
+//        relativeLayout.setOnClickListener( new AdapterView.OnItemClickListener(){
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view,
+//                                    int position, long id){
+//                // create my intent package
+//                // add all the information needed for detail page
+//                // startActivity with that intent
+//
+//                //explicit
+//                // from, to
+//                Intent detailIntent = new Intent(mContext, BeerDetailActivity.class);
+//                //put title and instruction URL
+//                detailIntent.putExtra("name", beer.name);
+//                // detailIntent.putExtra("beerImage", selectedBeer.imageUrl);
+//                detailIntent.putExtra("description",beer.description);
+//                detailIntent.putExtra("style",beer.style);
+//                detailIntent.putExtra("category",beer.category);
+//                detailIntent.putExtra("abv",beer.abv);
+//
+//                startActivity(this, );
+//
+//            }
+//        });
+
+
+
+
 
         return convertView;
     }
@@ -166,6 +203,8 @@ public class BeerAdapter extends BaseAdapter implements Filterable{
         public TextView categoryTextView;
         public ImageView thumbnailImageView;
         public TextView numberOfRecipesTextView;
+        public RelativeLayout relativeLayout;
+        public int clickCounter;
     }
 }
 
